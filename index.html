@@ -21,6 +21,7 @@
   html { scroll-behavior: smooth; }
   @keyframes cdSlow { from { transform: scale(1.06); } to { transform: scale(1); } }
 </style>
+<script src="./assets/image-slot.js"></script>
 </helmet>
 
 <div style="max-width: 100%; overflow-x: hidden; background: #FAF6EF;">
@@ -32,7 +33,7 @@
       </a>
       <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
         <nav style="display: flex; align-items: center; gap: clamp(18px, 2.2vw, 34px);">
-          <a href="#marke" style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #6B6259;" style-hover="color: #B5813A;">Marke</a>
+          <a href="#edda" style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #6B6259;" style-hover="color: #B5813A;">Über Edda</a>
           <a href="#leistungen" style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #6B6259;" style-hover="color: #B5813A;">Leistungen</a>
           <a href="#outdoor" style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #6B6259;" style-hover="color: #B5813A;">Outdoor</a>
           <a href="#referenzen" style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #6B6259;" style-hover="color: #B5813A;">Referenzen</a>
@@ -55,7 +56,7 @@
     </div>
     <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
       <nav style="display: grid; gap: 2px; padding: 8px clamp(16px, 4vw, 48px) 20px; border-top: 1px solid rgba(43,38,34,0.08); background: #FAF6EF;">
-        <a href="#marke" onClick="{{ closeMenu }}" style="font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #2B2622; padding: 16px 0; border-bottom: 1px solid rgba(43,38,34,0.07);">Marke</a>
+        <a href="#edda" onClick="{{ closeMenu }}" style="font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #2B2622; padding: 16px 0; border-bottom: 1px solid rgba(43,38,34,0.07);">Über Edda</a>
         <a href="#leistungen" onClick="{{ closeMenu }}" style="font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #2B2622; padding: 16px 0; border-bottom: 1px solid rgba(43,38,34,0.07);">Leistungen</a>
         <a href="#outdoor" onClick="{{ closeMenu }}" style="font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #2B2622; padding: 16px 0; border-bottom: 1px solid rgba(43,38,34,0.07);">Outdoor Living</a>
         <a href="#referenzen" onClick="{{ closeMenu }}" style="font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #2B2622; padding: 16px 0; border-bottom: 1px solid rgba(43,38,34,0.07);">Referenzen</a>
@@ -76,7 +77,7 @@
     <div style="position: relative; max-width: 1240px; width: 100%; margin: 0 auto; padding: clamp(80px, 12vw, 120px) clamp(20px, 4vw, 48px) clamp(48px, 6vw, 80px);">
       <p style="font-size: clamp(10px, 1.1vw, 11px); letter-spacing: 0.4em; text-transform: uppercase; color: #FFFDF9; margin: 0 0 20px;">Campos · Mallorca</p>
       <h1 style="font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(36px, 7.4vw, 86px); line-height: 1.05; letter-spacing: -0.01em; color: #FFFDF9; margin: 0; max-width: 15ch; text-wrap: pretty;">Mediterranes Wohnen mit Seele</h1>
-      <p style="font-size: clamp(15px, 1.5vw, 19px); font-weight: 300; line-height: 1.6; color: #FFFDF9; margin: 24px 0 0; max-width: 44ch;">Hell, natürlich und entspannt. Wir statten Villen, Fincas, Läden und Lokale auf Mallorca aus und führen einen kleinen Interior Store in Campos.</p>
+      <p style="font-size: clamp(15px, 1.5vw, 19px); font-weight: 300; line-height: 1.6; color: #FFFDF9; margin: 24px 0 0; max-width: 44ch;">Hell, natürlich und entspannt. Wir richten Villen, Fincas, Apartments und Lokale auf Mallorca ein, mit 30 Jahren Erfahrung in der Raumausstattung.</p>
       <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: clamp(30px, 4vw, 40px);">
         <a href="#kontakt" style="font-size: 11.5px; letter-spacing: 0.2em; text-transform: uppercase; background: #FFFDF9; color: #2B2622; padding: 17px 28px; border-radius: 2px;" style-hover="background: #F0DFC0;">Interior Service anfragen</a>
         <a href="#referenzen" style="font-size: 11.5px; letter-spacing: 0.2em; text-transform: uppercase; border: 1px solid rgba(255,253,249,0.55); color: #FFFDF9; padding: 17px 28px; border-radius: 2px;" style-hover="background: rgba(255,253,249,0.14);">Räume ansehen</a>
@@ -110,11 +111,46 @@
         <img src="assets/photos/p31.jpg" alt="Outdoor Living" style="width: 100%; aspect-ratio: 3/4; object-fit: cover; transition: transform 900ms cubic-bezier(.2,.7,.2,1);" style-hover="transform: scale(1.04);" />
         <span style="position: absolute; inset: auto 0 0 0; padding: 48px 18px 18px; background: linear-gradient(180deg, rgba(43,38,34,0) 0%, rgba(43,38,34,0.72) 100%); color: #FFFDF9; font-family: 'Cormorant Garamond', serif; font-size: 23px; line-height: 1.2; display: block;">Outdoor<br />Living</span>
       </a>
-      <a href="#store" style="position: relative; display: flex; flex-direction: column; justify-content: space-between; aspect-ratio: 3/4; overflow: hidden; background: #2B2622; padding: 20px 18px 18px;" style-hover="background: #3A332D;">
-        <span style="font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: #D9A85C;">Eröffnung in Kürze</span>
+      <a href="#edda" style="position: relative; display: flex; flex-direction: column; justify-content: space-between; aspect-ratio: 3/4; overflow: hidden; background: #2B2622; padding: 20px 18px 18px;" style-hover="background: #3A332D;">
+        <span style="font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: #D9A85C;">30 Jahre Erfahrung</span>
         <img src="assets/logo1.png" alt="" style="width: 38%; max-width: 90px; height: auto; opacity: 0.35; align-self: center;" />
-        <span style="color: #FFFDF9; font-family: 'Cormorant Garamond', serif; font-size: 23px; line-height: 1.2; display: block;">Ladengeschäft<br />Campos</span>
+        <span style="color: #FFFDF9; font-family: 'Cormorant Garamond', serif; font-size: 23px; line-height: 1.2; display: block;">Persönliche<br />Beratung</span>
       </a>
+    </div>
+  </section>
+
+  <section id="edda" style="scroll-margin-top: 80px; padding: clamp(64px, 11vw, 150px) clamp(20px, 4vw, 48px) 0;">
+    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat({{ eddaCols }}, minmax(0, 1fr)); gap: clamp(36px, 6vw, 88px); align-items: center;">
+      <div style="min-width: 0; position: relative;">
+        <div style="position: relative; width: 100%; aspect-ratio: 4/5; background: #EFE6D8;">
+          <image-slot id="edda-portrait" shape="rect" placeholder="Porträt von Edda hier ablegen"></image-slot>
+        </div>
+        <div style="position: absolute; right: clamp(-12px, -1.5vw, -24px); bottom: clamp(-20px, -2.5vw, -32px); background: #2B2622; color: #FFFDF9; padding: clamp(18px, 2.4vw, 28px) clamp(20px, 2.6vw, 32px); display: grid; gap: 4px; pointer-events: none;">
+          <span style="font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(44px, 5vw, 64px); line-height: 1;">30</span>
+          <span style="font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: #D9A85C;">Jahre Raumausstattung</span>
+        </div>
+      </div>
+      <div style="min-width: 0;">
+        <p style="font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: #B5813A; margin: 0 0 18px;">Edda · Raumausstatterin</p>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(29px, 4vw, 50px); line-height: 1.14; margin: 0; max-width: 18ch; text-wrap: pretty;">Ein Raum ist fertig, wenn man nicht mehr gehen möchte</h2>
+        <p style="font-size: clamp(15px, 1.4vw, 17px); font-weight: 300; line-height: 1.75; color: #57504A; margin: 24px 0 0; max-width: 52ch;">Seit 30 Jahren richtet Edda Räume ein. Sie weiß, wie Leinen im Mittagslicht aussieht, welcher Stoff ein Ferienjahr übersteht und warum ein Sofa zehn Zentimeter weiter vom Fenster besser wirkt. Diese Erfahrung bringt sie in jedes Projekt mit, ob Villa, Finca oder Apartment.</p>
+        <p style="font-size: clamp(15px, 1.4vw, 17px); font-weight: 300; line-height: 1.75; color: #57504A; margin: 16px 0 0; max-width: 52ch;">Sie hört zuerst zu. Wie lebst du, wer ist zu Gast, was soll bleiben? Danach entsteht ein Plan, der zu dir und zu deinem Haus passt.</p>
+        <ol style="list-style: none; padding: 0; margin: clamp(32px, 4vw, 44px) 0 0; display: grid; gap: 0; border-top: 1px solid rgba(43,38,34,0.12);">
+          <li style="display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 14px; padding: 18px 0; border-bottom: 1px solid rgba(43,38,34,0.12);">
+            <span style="font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #B5813A; line-height: 1.3;">01</span>
+            <span style="display: grid; gap: 4px;"><span style="font-size: 15px; font-weight: 400; color: #2B2622;">Gespräch vor Ort</span><span style="font-size: 14px; font-weight: 300; line-height: 1.6; color: #766E66;">Edda kommt zu dir ins Haus, sieht sich Räume, Licht und Grundriss an und bespricht mit dir das Vorhaben.</span></span>
+          </li>
+          <li style="display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 14px; padding: 18px 0; border-bottom: 1px solid rgba(43,38,34,0.12);">
+            <span style="font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #B5813A; line-height: 1.3;">02</span>
+            <span style="display: grid; gap: 4px;"><span style="font-size: 15px; font-weight: 400; color: #2B2622;">Stoffe und Muster im Store</span><span style="font-size: 14px; font-weight: 300; line-height: 1.6; color: #766E66;">In Campos legt sie dir Stoffe, Farbmuster und Materialien nebeneinander. So entscheidest du mit den Händen, nicht nach Katalog.</span></span>
+          </li>
+          <li style="display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 14px; padding: 18px 0; border-bottom: 1px solid rgba(43,38,34,0.12);">
+            <span style="font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #B5813A; line-height: 1.3;">03</span>
+            <span style="display: grid; gap: 4px;"><span style="font-size: 15px; font-weight: 400; color: #2B2622;">Bestellung und Lieferung</span><span style="font-size: 14px; font-weight: 300; line-height: 1.6; color: #766E66;">Sie ordert Möbel, Leuchten und Textilien bei den Herstellern, koordiniert die Lieferung und stellt alles an seinen Platz.</span></span>
+          </li>
+        </ol>
+        <a href="#kontakt" style="display: inline-block; margin-top: clamp(28px, 3.4vw, 38px); font-size: 11.5px; letter-spacing: 0.2em; text-transform: uppercase; background: #2B2622; color: #FAF6EF; padding: 17px 28px; border-radius: 2px;" style-hover="background: #B5813A; color: #FAF6EF;">Gespräch mit Edda vereinbaren</a>
+      </div>
     </div>
   </section>
 
@@ -624,6 +660,7 @@ class Component extends DCLogic {
       })),
       logoCols: this.state.vw > 900 ? 5 : 2,
       tileCols: this.state.vw > 900 ? 4 : 2,
+      eddaCols: this.state.vw > 900 ? 2 : 1,
       svcCols: this.state.vw > 720 ? 3 : 1,
       valCols: this.state.vw > 1100 ? 3 : 1,
       swatchCols: this.state.vw > 720 ? 5 : 2,
