@@ -10,632 +10,210 @@
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<script src="./assets/image-slot.js"></script>
 <style>
   *, *::before, *::after { box-sizing: border-box; }
-  body { margin: 0; background: #FAF6EF; color: #2B2622; font-family: 'Jost', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  body { margin: 0; background: #FDFCFA; color: #2E2A25; font-family: 'Jost', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
   img { display: block; }
-  a { color: #B5813A; text-decoration: none; }
-  a:hover { color: #8E6428; }
-  ::selection { background: #E3D7C4; }
+  a { color: #2E2A25; text-decoration: none; }
+  a:hover { color: #6E675F; }
   html { scroll-behavior: smooth; }
-  @keyframes cdSlow { from { transform: scale(1.06); } to { transform: scale(1); } }
+  ::selection { background: #EAE3D7; }
 </style>
-<script src="./assets/image-slot.js"></script>
 </helmet>
 
-<div style="max-width: 100%; overflow-x: hidden; background: #FAF6EF;">
+<div style="max-width: 100%; overflow-x: hidden; background: #FDFCFA;">
 
-  <header style="position: sticky; top: 0; z-index: 60; background: rgba(250,246,239,0.92); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(43,38,34,0.08);">
-    <div style="max-width: 1240px; margin: 0 auto; padding: 12px clamp(16px, 4vw, 48px); display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+  <header style="position: sticky; top: 0; z-index: 60; background: rgba(253,252,250,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(46,42,37,0.07);">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 14px clamp(18px, 4vw, 56px); display: flex; align-items: center; justify-content: space-between; gap: 16px;">
       <a href="#top" style="display: block; flex: 0 0 auto;">
-        <img src="assets/logo-wordmark.png" alt="Cúrcuma Dreams Interior" style="height: clamp(28px, 4.6vw, 40px); width: auto;" />
+        <img src="assets/logo-wordmark.png" alt="Cúrcuma Dreams Interior" style="height: clamp(28px, 4.4vw, 38px); width: auto;" />
       </a>
       <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
-        <nav style="display: flex; align-items: center; gap: clamp(18px, 2.2vw, 34px);">
-          <a href="#edda" style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #6B6259;" style-hover="color: #B5813A;">Über Edda</a>
-          <a href="#leistungen" style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #6B6259;" style-hover="color: #B5813A;">Leistungen</a>
-          <a href="#outdoor" style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #6B6259;" style-hover="color: #B5813A;">Outdoor</a>
-          <a href="#referenzen" style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #6B6259;" style-hover="color: #B5813A;">Referenzen</a>
-          <a href="#store" style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #6B6259;" style-hover="color: #B5813A;">Laden</a>
-          <a href="#kontakt" style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; border: 1px solid #B5813A; color: #8E6428; padding: 11px 20px; border-radius: 2px; white-space: nowrap;" style-hover="background: #B5813A; color: #FAF6EF;">Termin anfragen</a>
-          <div style="display: flex; align-items: center; gap: 9px; padding-left: 6px; border-left: 1px solid rgba(43,38,34,0.14);">
-            <sc-for list="{{ langs }}" as="l" hint-placeholder-count="3">
-              <button type="button" onClick="{{ l.onClick }}" style="font-family: 'Jost', sans-serif; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; background: transparent; border: none; padding: 4px 2px; cursor: pointer; color: {{ l.color }}; border-bottom: 1px solid {{ l.underline }};">{{ l.code }}</button>
-            </sc-for>
-          </div>
+        <nav style="display: flex; align-items: center; gap: clamp(20px, 2.4vw, 36px);">
+          <a href="#interior" style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #6E675F;" style-hover="color: #2E2A25;">Interior</a>
+          <a href="#materialien" style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #6E675F;" style-hover="color: #2E2A25;">Materialien</a>
+          <a href="#leistungen" style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #6E675F;" style-hover="color: #2E2A25;">Leistungen</a>
+          <a href="#edda" style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #6E675F;" style-hover="color: #2E2A25;">Über Edda</a>
+          <a href="#kontakt" style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #2E2A25; border: 1px solid rgba(46,42,37,0.3); padding: 11px 20px; border-radius: 2px; white-space: nowrap;" style-hover="background: #2E2A25; color: #FDFCFA;">Beratung</a>
         </nav>
       </sc-if>
       <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
-        <button type="button" onClick="{{ toggleMenu }}" aria-label="Menü" style="display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 46px; height: 46px; padding: 0 12px; background: transparent; border: 1px solid rgba(43,38,34,0.18); border-radius: 2px; cursor: pointer;">
-          <span style="display: block; height: 1px; background: #2B2622;"></span>
-          <span style="display: block; height: 1px; background: #2B2622;"></span>
-          <span style="display: block; height: 1px; background: #2B2622;"></span>
+        <button type="button" onClick="{{ toggleMenu }}" aria-label="Menü" style="display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 46px; height: 46px; padding: 0 12px; background: transparent; border: 1px solid rgba(46,42,37,0.18); border-radius: 2px; cursor: pointer;">
+          <span style="display: block; height: 1px; background: #2E2A25;"></span>
+          <span style="display: block; height: 1px; background: #2E2A25;"></span>
+          <span style="display: block; height: 1px; background: #2E2A25;"></span>
         </button>
       </sc-if>
     </div>
     <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
-      <nav style="display: grid; gap: 2px; padding: 8px clamp(16px, 4vw, 48px) 20px; border-top: 1px solid rgba(43,38,34,0.08); background: #FAF6EF;">
-        <a href="#edda" onClick="{{ closeMenu }}" style="font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #2B2622; padding: 16px 0; border-bottom: 1px solid rgba(43,38,34,0.07);">Über Edda</a>
-        <a href="#leistungen" onClick="{{ closeMenu }}" style="font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #2B2622; padding: 16px 0; border-bottom: 1px solid rgba(43,38,34,0.07);">Leistungen</a>
-        <a href="#outdoor" onClick="{{ closeMenu }}" style="font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #2B2622; padding: 16px 0; border-bottom: 1px solid rgba(43,38,34,0.07);">Outdoor Living</a>
-        <a href="#referenzen" onClick="{{ closeMenu }}" style="font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #2B2622; padding: 16px 0; border-bottom: 1px solid rgba(43,38,34,0.07);">Referenzen</a>
-        <a href="#store" onClick="{{ closeMenu }}" style="font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #2B2622; padding: 16px 0; border-bottom: 1px solid rgba(43,38,34,0.07);">Ladengeschäft</a>
-        <div style="display: flex; gap: 16px; padding: 18px 0 0;">
-          <sc-for list="{{ langs }}" as="l" hint-placeholder-count="3">
-            <button type="button" onClick="{{ l.onClick }}" style="font-family: 'Jost', sans-serif; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; background: transparent; border: none; padding: 6px 2px; cursor: pointer; color: {{ l.color }}; border-bottom: 1px solid {{ l.underline }};">{{ l.code }}</button>
-          </sc-for>
-        </div>
-        <a href="#kontakt" onClick="{{ closeMenu }}" style="font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #FAF6EF; background: #2B2622; padding: 18px 20px; text-align: center; margin-top: 14px; border-radius: 2px;">Termin anfragen</a>
+      <nav style="display: grid; padding: 6px clamp(18px, 4vw, 56px) 20px; border-top: 1px solid rgba(46,42,37,0.07); background: #FDFCFA;">
+        <a href="#interior" onClick="{{ closeMenu }}" style="font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; padding: 16px 0; border-bottom: 1px solid rgba(46,42,37,0.07);">Interior</a>
+        <a href="#materialien" onClick="{{ closeMenu }}" style="font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; padding: 16px 0; border-bottom: 1px solid rgba(46,42,37,0.07);">Materialien</a>
+        <a href="#leistungen" onClick="{{ closeMenu }}" style="font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; padding: 16px 0; border-bottom: 1px solid rgba(46,42,37,0.07);">Leistungen</a>
+        <a href="#edda" onClick="{{ closeMenu }}" style="font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; padding: 16px 0; border-bottom: 1px solid rgba(46,42,37,0.07);">Über Edda</a>
+        <a href="#kontakt" onClick="{{ closeMenu }}" style="font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #FDFCFA; background: #2E2A25; padding: 18px 20px; text-align: center; margin-top: 14px; border-radius: 2px;">Beratungstermin vereinbaren</a>
       </nav>
     </sc-if>
   </header>
 
-  <section id="top" style="position: relative; min-height: min(86svh, 840px); display: grid; align-items: end; overflow: hidden;">
-    <img src="assets/photos/p01.jpg" alt="Helles mediterranes Wohnzimmer" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; animation: cdSlow 2.4s ease-out both;" />
-    <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(43,38,34,0.72) 0%, rgba(43,38,34,0.58) 42%, rgba(43,38,34,0.12) 80%, rgba(43,38,34,0) 100%), linear-gradient(180deg, rgba(43,38,34,0.40) 0%, rgba(43,38,34,0.30) 24%, rgba(43,38,34,0.46) 60%, rgba(43,38,34,0.78) 100%);"></div>
-    <div style="position: relative; max-width: 1240px; width: 100%; margin: 0 auto; padding: clamp(80px, 12vw, 120px) clamp(20px, 4vw, 48px) clamp(48px, 6vw, 80px);">
-      <p style="font-size: clamp(10px, 1.1vw, 11px); letter-spacing: 0.4em; text-transform: uppercase; color: #FFFDF9; margin: 0 0 20px;">Campos · Mallorca</p>
-      <h1 style="font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(36px, 7.4vw, 86px); line-height: 1.05; letter-spacing: -0.01em; color: #FFFDF9; margin: 0; max-width: 15ch; text-wrap: pretty;">Mediterranes Wohnen mit Seele</h1>
-      <p style="font-size: clamp(15px, 1.5vw, 19px); font-weight: 300; line-height: 1.6; color: #FFFDF9; margin: 24px 0 0; max-width: 44ch;">Hell, natürlich und entspannt. Wir richten Villen, Fincas, Apartments und Lokale auf Mallorca ein, mit 30 Jahren Erfahrung in der Raumausstattung.</p>
-      <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: clamp(30px, 4vw, 40px);">
-        <a href="#kontakt" style="font-size: 11.5px; letter-spacing: 0.2em; text-transform: uppercase; background: #FFFDF9; color: #2B2622; padding: 17px 28px; border-radius: 2px;" style-hover="background: #F0DFC0;">Interior Service anfragen</a>
-        <a href="#referenzen" style="font-size: 11.5px; letter-spacing: 0.2em; text-transform: uppercase; border: 1px solid rgba(255,253,249,0.55); color: #FFFDF9; padding: 17px 28px; border-radius: 2px;" style-hover="background: rgba(255,253,249,0.14);">Räume ansehen</a>
+  <section id="top" style="padding: clamp(12px, 2vw, 24px) clamp(12px, 2vw, 24px) 0;">
+    <div style="position: relative; width: 100%; height: {{ heroH }}; background: #F5F1EA;">
+      <image-slot id="v2-hero" src="assets/photos/p01.jpg" shape="rect" placeholder="Hero-Bild: mediterranes Zuhause, Finca oder eleganter Wohnraum"></image-slot>
+    </div>
+    <div style="max-width: 820px; margin: 0 auto; padding: clamp(48px, 7vw, 96px) clamp(8px, 2vw, 24px) clamp(56px, 8vw, 110px); text-align: center;">
+      <h1 style="font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(36px, 6vw, 72px); line-height: 1.08; letter-spacing: -0.01em; margin: 0; text-wrap: balance;">Räume, die sich nach Zuhause anfühlen.</h1>
+      <p style="font-size: clamp(15px, 1.5vw, 18px); font-weight: 300; line-height: 1.7; color: #6E675F; margin: 24px auto 0; max-width: 46ch; text-wrap: pretty;">Interior für Menschen, die Räume nicht nur schön, sondern persönlich, entspannt und voller Atmosphäre gestalten möchten.</p>
+      <p style="display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 14px; margin: 30px 0 0; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: #2E2A25;">
+        <span>Interior</span><span style="color: #BDB3A6;">·</span><span>Möbel</span><span style="color: #BDB3A6;">·</span><span>Accessoires</span><span style="color: #BDB3A6;">·</span><span>Beratung</span>
+      </p>
+    </div>
+  </section>
+
+  <section id="interior" style="scroll-margin-top: 80px; padding: clamp(64px, 10vw, 140px) clamp(20px, 4vw, 56px); background: #F5F1EA;">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <div style="max-width: 760px; margin: 0 auto; text-align: center;">
+        <p style="font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: #6E675F; margin: 0 0 20px;">Interior mit Gefühl</p>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(28px, 3.8vw, 46px); line-height: 1.18; margin: 0; text-wrap: balance;">Ein schönes Zuhause entsteht nicht durch einen bestimmten Stil oder eine festgelegte Farbwelt.</h2>
+        <p style="font-size: clamp(15px, 1.4vw, 17px); font-weight: 300; line-height: 1.8; color: #57514A; margin: 28px auto 0; max-width: 56ch; text-wrap: pretty;">Es entsteht durch das Zusammenspiel von Licht, Materialien, Farben, Stoffen und den Dingen, die einen Raum persönlich machen. Wir lieben natürliche Leinenstoffe, weiche Texturen, Holz, Stein, Keramik und besondere Details. Aber wir lieben genauso die Individualität unserer Kunden.</p>
+        <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(22px, 2.6vw, 30px); line-height: 1.45; margin: 34px 0 0; color: #2E2A25;">Denn manchmal darf es ganz ruhig und natürlich sein.<br />Und manchmal darf es Türkis sein.</p>
+        <p style="font-size: clamp(15px, 1.4vw, 17px); font-weight: 300; line-height: 1.8; color: #57514A; margin: 28px auto 0; max-width: 52ch;">Unser Stil ist deshalb keine feste Farbpalette. Unser Stil ist das Gefühl, das am Ende entsteht.</p>
       </div>
-    </div>
-  </section>
-
-  <section style="border-bottom: 1px solid rgba(43,38,34,0.08);">
-    <div style="max-width: 1240px; margin: 0 auto; padding: 18px clamp(20px, 4vw, 48px); display: flex; flex-wrap: wrap; gap: 8px clamp(18px, 3vw, 38px); align-items: center; justify-content: center;">
-      <span style="font-size: clamp(9px, 1vw, 10.5px); letter-spacing: 0.3em; text-transform: uppercase; color: #9C9084;">Elegance</span>
-      <span style="width: 4px; height: 4px; border-radius: 50%; background: #D9A85C;"></span>
-      <span style="font-size: clamp(9px, 1vw, 10.5px); letter-spacing: 0.3em; text-transform: uppercase; color: #9C9084;">Mediterranean Light</span>
-      <span style="width: 4px; height: 4px; border-radius: 50%; background: #D9A85C;"></span>
-      <span style="font-size: clamp(9px, 1vw, 10.5px); letter-spacing: 0.3em; text-transform: uppercase; color: #9C9084;">Natural Materials</span>
-      <span style="width: 4px; height: 4px; border-radius: 50%; background: #D9A85C;"></span>
-      <span style="font-size: clamp(9px, 1vw, 10.5px); letter-spacing: 0.3em; text-transform: uppercase; color: #9C9084;">Quiet Luxury</span>
-    </div>
-  </section>
-
-  <section style="padding: clamp(18px, 2.5vw, 30px) clamp(20px, 4vw, 48px) 0;">
-    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat({{ tileCols }}, minmax(0, 1fr)); gap: clamp(8px, 1.2vw, 14px);">
-      <a href="#leistungen" style="position: relative; display: block; overflow: hidden; background: #EFE6D8;">
-        <img src="assets/photos/p24.jpg" alt="Restaurant Malo" style="width: 100%; aspect-ratio: 3/4; object-fit: cover; transition: transform 900ms cubic-bezier(.2,.7,.2,1);" style-hover="transform: scale(1.04);" />
-        <span style="position: absolute; inset: auto 0 0 0; padding: 48px 18px 18px; background: linear-gradient(180deg, rgba(43,38,34,0) 0%, rgba(43,38,34,0.72) 100%); color: #FFFDF9; font-family: 'Cormorant Garamond', serif; font-size: 23px; line-height: 1.2; display: block;">Gastronomie<br />und Läden</span>
-      </a>
-      <a href="#leistungen" style="position: relative; display: block; overflow: hidden; background: #EFE6D8;">
-        <img src="assets/photos/p01.jpg" alt="Privates Wohnen" style="width: 100%; aspect-ratio: 3/4; object-fit: cover; transition: transform 900ms cubic-bezier(.2,.7,.2,1);" style-hover="transform: scale(1.04);" />
-        <span style="position: absolute; inset: auto 0 0 0; padding: 48px 18px 18px; background: linear-gradient(180deg, rgba(43,38,34,0) 0%, rgba(43,38,34,0.72) 100%); color: #FFFDF9; font-family: 'Cormorant Garamond', serif; font-size: 23px; line-height: 1.2; display: block;">Privates<br />Wohnen</span>
-      </a>
-      <a href="#outdoor" style="position: relative; display: block; overflow: hidden; background: #EFE6D8;">
-        <img src="assets/photos/p31.jpg" alt="Outdoor Living" style="width: 100%; aspect-ratio: 3/4; object-fit: cover; transition: transform 900ms cubic-bezier(.2,.7,.2,1);" style-hover="transform: scale(1.04);" />
-        <span style="position: absolute; inset: auto 0 0 0; padding: 48px 18px 18px; background: linear-gradient(180deg, rgba(43,38,34,0) 0%, rgba(43,38,34,0.72) 100%); color: #FFFDF9; font-family: 'Cormorant Garamond', serif; font-size: 23px; line-height: 1.2; display: block;">Outdoor<br />Living</span>
-      </a>
-      <a href="#edda" style="position: relative; display: flex; flex-direction: column; justify-content: space-between; aspect-ratio: 3/4; overflow: hidden; background: #2B2622; padding: 20px 18px 18px;" style-hover="background: #3A332D;">
-        <span style="font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: #D9A85C;">30 Jahre Erfahrung</span>
-        <img src="assets/logo1.png" alt="" style="width: 38%; max-width: 90px; height: auto; opacity: 0.35; align-self: center;" />
-        <span style="color: #FFFDF9; font-family: 'Cormorant Garamond', serif; font-size: 23px; line-height: 1.2; display: block;">Persönliche<br />Beratung</span>
-      </a>
-    </div>
-  </section>
-
-  <section id="edda" style="scroll-margin-top: 80px; padding: clamp(64px, 11vw, 150px) clamp(20px, 4vw, 48px) 0;">
-    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat({{ eddaCols }}, minmax(0, 1fr)); gap: clamp(36px, 6vw, 88px); align-items: center;">
-      <div style="min-width: 0; position: relative;">
-        <div style="position: relative; width: 100%; aspect-ratio: 4/5; background: #EFE6D8;">
-          <image-slot id="edda-portrait" shape="rect" placeholder="Porträt von Edda hier ablegen"></image-slot>
-        </div>
-        <div style="position: absolute; right: clamp(-12px, -1.5vw, -24px); bottom: clamp(-20px, -2.5vw, -32px); background: #2B2622; color: #FFFDF9; padding: clamp(18px, 2.4vw, 28px) clamp(20px, 2.6vw, 32px); display: grid; gap: 4px; pointer-events: none;">
-          <span style="font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(44px, 5vw, 64px); line-height: 1;">30</span>
-          <span style="font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: #D9A85C;">Jahre Raumausstattung</span>
-        </div>
-      </div>
-      <div style="min-width: 0;">
-        <p style="font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: #B5813A; margin: 0 0 18px;">Edda · Raumausstatterin</p>
-        <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(29px, 4vw, 50px); line-height: 1.14; margin: 0; max-width: 18ch; text-wrap: pretty;">Ein Raum ist fertig, wenn man nicht mehr gehen möchte</h2>
-        <p style="font-size: clamp(15px, 1.4vw, 17px); font-weight: 300; line-height: 1.75; color: #57504A; margin: 24px 0 0; max-width: 52ch;">Seit 30 Jahren richtet Edda Räume ein. Sie weiß, wie Leinen im Mittagslicht aussieht, welcher Stoff ein Ferienjahr übersteht und warum ein Sofa zehn Zentimeter weiter vom Fenster besser wirkt. Diese Erfahrung bringt sie in jedes Projekt mit, ob Villa, Finca oder Apartment.</p>
-        <p style="font-size: clamp(15px, 1.4vw, 17px); font-weight: 300; line-height: 1.75; color: #57504A; margin: 16px 0 0; max-width: 52ch;">Sie hört zuerst zu. Wie lebst du, wer ist zu Gast, was soll bleiben? Danach entsteht ein Plan, der zu dir und zu deinem Haus passt.</p>
-        <ol style="list-style: none; padding: 0; margin: clamp(32px, 4vw, 44px) 0 0; display: grid; gap: 0; border-top: 1px solid rgba(43,38,34,0.12);">
-          <li style="display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 14px; padding: 18px 0; border-bottom: 1px solid rgba(43,38,34,0.12);">
-            <span style="font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #B5813A; line-height: 1.3;">01</span>
-            <span style="display: grid; gap: 4px;"><span style="font-size: 15px; font-weight: 400; color: #2B2622;">Gespräch vor Ort</span><span style="font-size: 14px; font-weight: 300; line-height: 1.6; color: #766E66;">Edda kommt zu dir ins Haus, sieht sich Räume, Licht und Grundriss an und bespricht mit dir das Vorhaben.</span></span>
-          </li>
-          <li style="display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 14px; padding: 18px 0; border-bottom: 1px solid rgba(43,38,34,0.12);">
-            <span style="font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #B5813A; line-height: 1.3;">02</span>
-            <span style="display: grid; gap: 4px;"><span style="font-size: 15px; font-weight: 400; color: #2B2622;">Stoffe und Muster im Store</span><span style="font-size: 14px; font-weight: 300; line-height: 1.6; color: #766E66;">In Campos legt sie dir Stoffe, Farbmuster und Materialien nebeneinander. So entscheidest du mit den Händen, nicht nach Katalog.</span></span>
-          </li>
-          <li style="display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 14px; padding: 18px 0; border-bottom: 1px solid rgba(43,38,34,0.12);">
-            <span style="font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #B5813A; line-height: 1.3;">03</span>
-            <span style="display: grid; gap: 4px;"><span style="font-size: 15px; font-weight: 400; color: #2B2622;">Bestellung und Lieferung</span><span style="font-size: 14px; font-weight: 300; line-height: 1.6; color: #766E66;">Sie ordert Möbel, Leuchten und Textilien bei den Herstellern, koordiniert die Lieferung und stellt alles an seinen Platz.</span></span>
-          </li>
-        </ol>
-        <a href="#kontakt" style="display: inline-block; margin-top: clamp(28px, 3.4vw, 38px); font-size: 11.5px; letter-spacing: 0.2em; text-transform: uppercase; background: #2B2622; color: #FAF6EF; padding: 17px 28px; border-radius: 2px;" style-hover="background: #B5813A; color: #FAF6EF;">Gespräch mit Edda vereinbaren</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="marke" style="scroll-margin-top: 80px; padding: clamp(64px, 11vw, 150px) clamp(20px, 4vw, 48px);">
-    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(36px, 6vw, 88px); align-items: center;">
-      <div style="min-width: 0;">
-        <img src="assets/logo1.png" alt="" style="width: 42px; height: auto; opacity: 0.9; margin-bottom: 26px;" />
-        <p style="font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: #B5813A; margin: 0 0 18px;">Die Idee</p>
-        <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(29px, 4vw, 50px); line-height: 1.14; margin: 0; max-width: 20ch; text-wrap: pretty;">Ein Zuhause, das ankommen lässt</h2>
-        <p style="font-size: clamp(15px, 1.4vw, 17px); font-weight: 300; line-height: 1.75; color: #57504A; margin: 24px 0 0; max-width: 54ch;">Kurkuma meint bei uns kein kräftiges Gelb, sondern einen warmen Sonnenakzent. Und Dreams steht für das Gefühl, das ein Raum auslösen soll: ankommen, durchatmen, zuhause sein.</p>
-        <p style="font-size: clamp(15px, 1.4vw, 17px); font-weight: 300; line-height: 1.75; color: #57504A; margin: 16px 0 0; max-width: 54ch;">Nicht rustikal, nicht überladen, nicht typisch Mallorca. Lieber hell, weich und wohnlich. Natürliche Materialien, viel Luft und wenige Stücke, die wirklich passen.</p>
-        <div style="display: grid; grid-template-columns: repeat({{ valCols }}, minmax(0, 1fr)); gap: 22px; margin-top: 40px; padding-top: 32px; border-top: 1px solid rgba(43,38,34,0.1);">
-          <div>
-            <p style="font-family: 'Cormorant Garamond', serif; font-size: 22px; margin: 0 0 6px;">Natürlichkeit</p>
-            <p style="font-size: 13.5px; font-weight: 300; line-height: 1.6; color: #766E66; margin: 0;">Leinen, Holz, Rattan, Keramik, Naturfasern.</p>
+      <div style="display: grid; grid-template-columns: repeat({{ triCols }}, minmax(0, 1fr)); gap: clamp(10px, 1.4vw, 18px); margin-top: clamp(48px, 6vw, 80px);">
+        <figure style="margin: 0; min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px;">
+          <div style="position: relative; width: 100%; min-width: 0; aspect-ratio: 4/5; background: #EAE3D7;">
+            <image-slot id="v2-feel-1" src="assets/photos/p11.jpg" shape="rect" placeholder="Ruhiges Interior"></image-slot>
           </div>
-          <div>
-            <p style="font-family: 'Cormorant Garamond', serif; font-size: 22px; margin: 0 0 6px;">Leichtigkeit</p>
-            <p style="font-size: 13.5px; font-weight: 300; line-height: 1.6; color: #766E66; margin: 0;">Viel Luft, Licht und freie Flächen.</p>
+          <figcaption style="font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: #6E675F;">Ruhig und natürlich</figcaption>
+        </figure>
+        <figure style="margin: 0; min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px;">
+          <div style="position: relative; width: 100%; min-width: 0; aspect-ratio: 4/5; background: #CFE3E0;">
+            <image-slot id="v2-feel-2" shape="rect" placeholder="Farbakzent, z. B. Türkis"></image-slot>
           </div>
-          <div>
-            <p style="font-family: 'Cormorant Garamond', serif; font-size: 22px; margin: 0 0 6px;">Qualität</p>
-            <p style="font-size: 13.5px; font-weight: 300; line-height: 1.6; color: #766E66; margin: 0;">Wenige gute Stücke statt viel Auswahl.</p>
+          <figcaption style="font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: #6E675F;">Mit Farbakzent</figcaption>
+        </figure>
+        <figure style="margin: 0; min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px;">
+          <div style="position: relative; width: 100%; min-width: 0; aspect-ratio: 4/5; background: #EAE3D7;">
+            <image-slot id="v2-feel-3" src="assets/photos/p13.jpg" shape="rect" placeholder="Detail, Objekt oder Licht"></image-slot>
           </div>
-        </div>
-      </div>
-      <div style="min-width: 0; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(10px, 1.4vw, 16px);">
-        <img src="assets/photos/p13.jpg" alt="Keramikvase mit Zweigen" style="width: 100%; aspect-ratio: 3/4; object-fit: cover; grid-row: span 2; align-self: center;" />
-        <img src="assets/photos/p11.jpg" alt="Wohnzimmer in Creme" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
-        <img src="assets/photos/p18.jpg" alt="Stylingdetail" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
+          <figcaption style="font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: #6E675F;">Detail, Objekt, Licht</figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
-  <section style="background: #F3EDE3; padding: clamp(56px, 9vw, 120px) clamp(20px, 4vw, 48px);">
-    <div style="max-width: 1240px; margin: 0 auto;">
-      <p style="font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: #B5813A; margin: 0 0 16px; text-align: center;">Farbwelt</p>
-      <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(26px, 3.4vw, 42px); line-height: 1.16; margin: 0 auto; max-width: 22ch; text-align: center; text-wrap: pretty;">Die Bühne gehört Creme, Leinen und Licht</h2>
-      <div style="display: grid; grid-template-columns: repeat({{ swatchCols }}, minmax(0, 1fr)); gap: clamp(12px, 1.8vw, 18px); margin-top: clamp(34px, 5vw, 64px);">
-        <div>
-          <div style="height: clamp(80px, 11vw, 140px); background: #FCFAF6; border: 1px solid rgba(43,38,34,0.09);"></div>
-          <p style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; margin: 13px 0 4px;">Warm White</p>
-          <p style="font-size: 12.5px; font-weight: 300; color: #766E66; margin: 0;">hell, ruhig, hochwertig</p>
-        </div>
-        <div>
-          <div style="height: clamp(80px, 11vw, 140px); background: #EFE6D8;"></div>
-          <p style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; margin: 13px 0 4px;">Light Flax</p>
-          <p style="font-size: 12.5px; font-weight: 300; color: #766E66; margin: 0;">natürlich, mediterran</p>
-        </div>
-        <div>
-          <div style="height: clamp(80px, 11vw, 140px); background: #E3D7C4;"></div>
-          <p style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; margin: 13px 0 4px;">Soft Sand</p>
-          <p style="font-size: 12.5px; font-weight: 300; color: #766E66; margin: 0;">warm, unaufdringlich</p>
-        </div>
-        <div>
-          <div style="height: clamp(80px, 11vw, 140px); background: #D9A85C;"></div>
-          <p style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; margin: 13px 0 4px;">Pale Kurkuma</p>
-          <p style="font-size: 12.5px; font-weight: 300; color: #766E66; margin: 0;">unser Sonnenakzent</p>
-        </div>
-        <div style="grid-column: {{ lastSwatch }};">
-          <div style="height: clamp(80px, 11vw, 140px); background: #A89B8C;"></div>
-          <p style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; margin: 13px 0 4px;">Warm Greige</p>
-          <p style="font-size: 12.5px; font-weight: 300; color: #766E66; margin: 0;">Erdung und Balance</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="leistungen" style="scroll-margin-top: 80px; padding: clamp(64px, 11vw, 150px) clamp(20px, 4vw, 48px);">
-    <div style="max-width: 1240px; margin: 0 auto;">
-      <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: end; justify-content: space-between; margin-bottom: clamp(34px, 5vw, 64px);">
+  <section id="materialien" style="scroll-margin-top: 80px; padding: clamp(64px, 10vw, 140px) clamp(20px, 4vw, 56px);">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <div style="display: flex; flex-wrap: wrap; gap: 16px clamp(24px, 4vw, 64px); align-items: end; justify-content: space-between; margin-bottom: clamp(32px, 4.5vw, 56px);">
         <div style="min-width: 0;">
-          <p style="font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: #B5813A; margin: 0 0 18px;">Leistungen</p>
-          <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(29px, 4vw, 50px); line-height: 1.14; margin: 0; max-width: 18ch; text-wrap: pretty;">Vom einzelnen Stück bis zum kompletten Lokal</h2>
+          <p style="font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: #6E675F; margin: 0 0 18px;">Materialien</p>
+          <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(30px, 4vw, 50px); line-height: 1.12; margin: 0; max-width: 16ch; text-wrap: balance;">Materialien, die man fühlen möchte</h2>
         </div>
-        <p style="font-size: 15px; font-weight: 300; line-height: 1.7; color: #57504A; margin: 0; max-width: 38ch;">Persönlich begleitet, vor Ort auf Mallorca. Wir arbeiten für Villen- und Fincabesitzer, Gastronomen, Ladenbetreiber und Ferienvermieter.</p>
+        <p style="font-size: 15px; font-weight: 300; line-height: 1.75; color: #57514A; margin: 0; max-width: 40ch;">Stoffe, Hölzer, Steine und Muster legen wir dir im Store in Campos nebeneinander. So entscheidest du mit den Händen und nicht nach Katalog.</p>
       </div>
-      <div style="display: grid; grid-template-columns: repeat({{ svcCols }}, minmax(0, 1fr)); gap: clamp(14px, 2.5vw, 34px);">
-        <article style="background: #FCFAF6; border: 1px solid rgba(43,38,34,0.08);">
-          <img src="assets/photos/p12.jpg" alt="Interior Store" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
-          <div style="padding: clamp(22px, 3vw, 34px);">
-            <p style="font-size: 10.5px; letter-spacing: 0.28em; text-transform: uppercase; color: #B5813A; margin: 0 0 13px;">01 · Store</p>
-            <h3 style="font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 26px; line-height: 1.2; margin: 0 0 13px;">Interior und Wohnobjekte</h3>
-            <p style="font-size: 14.5px; font-weight: 300; line-height: 1.7; color: #57504A; margin: 0;">Möbel, Leuchten, Keramik, Textilien und Accessoires. Wir führen nur, was wir auch selbst zuhause stellen würden.</p>
-          </div>
-        </article>
-        <article style="background: #FCFAF6; border: 1px solid rgba(43,38,34,0.08);">
-          <img src="assets/photos/p22.jpg" alt="Gastraum im Restaurant Malo" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
-          <div style="padding: clamp(22px, 3vw, 34px);">
-            <p style="font-size: 10.5px; letter-spacing: 0.28em; text-transform: uppercase; color: #B5813A; margin: 0 0 13px;">02 · Gewerbe</p>
-            <h3 style="font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 26px; line-height: 1.2; margin: 0 0 13px;">Läden, Lokale und Hotels</h3>
-            <p style="font-size: 14.5px; font-weight: 300; line-height: 1.7; color: #57504A; margin: 0;">Gastraum, Bar, Lounge, Terrasse und Verkaufsfläche. Wir übernehmen Konzept, Möbelauswahl, Beleuchtung, Textilien und die Einrichtung vor Ort.</p>
-          </div>
-        </article>
-        <article style="background: #FCFAF6; border: 1px solid rgba(43,38,34,0.08);">
-          <img src="assets/photos/p03.jpg" alt="Essplatz in einem Apartment" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
-          <div style="padding: clamp(22px, 3vw, 34px);">
-            <p style="font-size: 10.5px; letter-spacing: 0.28em; text-transform: uppercase; color: #B5813A; margin: 0 0 13px;">03 · Privat</p>
-            <h3 style="font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 26px; line-height: 1.2; margin: 0 0 13px;">Villa, Finca und Apartment</h3>
-            <p style="font-size: 14.5px; font-weight: 300; line-height: 1.7; color: #57504A; margin: 0;">Raum für Raum geplant: Materialien, Farben, Möbel, Lieferung und das Styling am Ende. Auch zur Vorbereitung auf Verkauf oder Vermietung.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="outdoor" style="scroll-margin-top: 80px; background: #F3EDE3; padding: clamp(64px, 11vw, 150px) clamp(20px, 4vw, 48px);">
-    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr)); gap: clamp(36px, 6vw, 80px); align-items: center;">
-      <div style="min-width: 0; order: 2;">
-        <p style="font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: #B5813A; margin: 0 0 16px;">Outdoor Living</p>
-        <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(29px, 4vw, 50px); line-height: 1.14; margin: 0; max-width: 17ch; text-wrap: pretty;">Draußen wird hier ein zweiter Raum</h2>
-        <p style="font-size: clamp(15px, 1.4vw, 17px); font-weight: 300; line-height: 1.75; color: #57504A; margin: 24px 0 0; max-width: 48ch;">Terrasse, Innenhof, Dachterrasse, Poolbereich. Wir planen Möbel, Schatten, Licht und Bepflanzung so, dass sie das Klima der Insel aushalten und trotzdem wohnlich aussehen.</p>
-        <ul style="list-style: none; padding: 0; margin: 34px 0 0; display: grid; gap: 11px;">
-          <li style="font-size: 15px; font-weight: 300; color: #2B2622; padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: #D9A85C;"></span>Lounge- und Essbereiche im Freien</li>
-          <li style="font-size: 15px; font-weight: 300; color: #2B2622; padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: #D9A85C;"></span>Sonnenschutz, Pergolen und Sonnensegel</li>
-          <li style="font-size: 15px; font-weight: 300; color: #2B2622; padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: #D9A85C;"></span>Außenbeleuchtung und Pflanzgefäße</li>
-          <li style="font-size: 15px; font-weight: 300; color: #2B2622; padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: #D9A85C;"></span>Wetterfeste Textilien und Outdoor-Teppiche</li>
-        </ul>
-      </div>
-      <div style="min-width: 0; order: 1; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(10px, 1.4vw, 16px);">
-        <img src="assets/photos/p31.jpg" alt="Terrasse mit Bepflanzung" style="width: 100%; aspect-ratio: 3/4; object-fit: cover; grid-row: span 2; align-self: center;" />
-        <img src="assets/photos/p33.jpg" alt="Eingang mit Pflanzen" style="width: 100%; aspect-ratio: 1/1; object-fit: cover;" />
-        <img src="assets/photos/p27.jpg" alt="Überdachter Außenbereich" style="width: 100%; aspect-ratio: 1/1; object-fit: cover;" />
-      </div>
-    </div>
-  </section>
-
-  <section style="position: relative; overflow: hidden;">
-    <img src="assets/photos/p29.jpg" alt="Bar mit warmem Licht" style="width: 100%; height: clamp(340px, 52vw, 620px); object-fit: cover;" />
-    <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(43,38,34,0.62) 0%, rgba(43,38,34,0.18) 72%);"></div>
-    <div style="position: absolute; inset: 0; display: grid; align-items: center;">
-      <div style="max-width: 1240px; width: 100%; margin: 0 auto; padding: 0 clamp(20px, 4vw, 48px);">
-        <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(23px, 3.6vw, 46px); line-height: 1.3; color: #FFFDF9; margin: 0; max-width: 22ch; text-wrap: pretty;">Weniger zeigen, aber jedes Stück stärker inszenieren.</p>
-        <p style="font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: #F0DFC0; margin: 22px 0 0;">Unsere wichtigste Regel</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="schlafen" style="scroll-margin-top: 80px; padding: clamp(64px, 11vw, 150px) clamp(20px, 4vw, 48px) 0;">
-    <div style="max-width: 1240px; margin: 0 auto;">
-      <div style="display: flex; flex-wrap: wrap; gap: 14px clamp(18px, 3vw, 56px); align-items: end; justify-content: space-between; margin-bottom: clamp(28px, 4vw, 48px);">
-        <div style="min-width: 0;">
-          <p style="font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: #B5813A; margin: 0 0 16px;">Wohnideen Schlafzimmer</p>
-          <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(29px, 4vw, 50px); line-height: 1.14; margin: 0; max-width: 18ch; text-wrap: pretty;">Betten, Stoffe und Licht für ruhige Nächte</h2>
-        </div>
-        <p style="font-size: 15px; font-weight: 300; line-height: 1.7; color: #57504A; margin: 0; max-width: 40ch;">Polsterbetten, Bettbänke, Nachttische, Leuchten und Bettwäsche aus unserem Sortiment. So können sie in einer Villa, einer Finca oder einem Apartment am Meer wirken.</p>
-      </div>
-      <figure style="margin: 0; position: relative; overflow: hidden; background: #EFE6D8;">
-        <img src="assets/inspo/schlafzimmer-2.png" alt="Polsterbett unter Holzbalken in einer Finca" style="width: 100%; aspect-ratio: {{ wideRatio }}; object-fit: cover;" />
-        <figcaption style="position: absolute; left: 0; right: 0; bottom: 0; padding: 60px clamp(18px, 3vw, 32px) clamp(16px, 2.4vw, 26px); background: linear-gradient(180deg, rgba(43,38,34,0) 0%, rgba(43,38,34,0.68) 100%); color: #FFFDF9; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; align-items: end;">
-          <span style="font-family: 'Cormorant Garamond', serif; font-size: clamp(20px, 2.2vw, 28px); line-height: 1.2;">Boxspringbett mit Leinenbezug</span>
-          <span style="font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase;">Finca · Dachgeschoss</span>
-        </figcaption>
-      </figure>
-      <div style="display: grid; grid-template-columns: repeat({{ inspoCols }}, minmax(0, 1fr)); gap: clamp(10px, 1.4vw, 16px); margin-top: clamp(10px, 1.4vw, 16px);">
-        <figure style="margin: 0; display: grid; gap: 12px;">
-          <img src="assets/inspo/schlafzimmer-1.png" alt="Polsterbett mit Struktur am Bogenfenster" style="width: 100%; aspect-ratio: 4/5; object-fit: cover;" />
-          <figcaption style="font-size: 13.5px; font-weight: 300; color: #57504A;">Polsterbett und Kommoden in Strukturstoff</figcaption>
-        </figure>
-        <figure style="margin: 0; display: grid; gap: 12px;">
-          <img src="assets/inspo/schlafzimmer-4.png" alt="Himmelbett mit Leinenvorhängen" style="width: 100%; aspect-ratio: 4/5; object-fit: cover;" />
-          <figcaption style="font-size: 13.5px; font-weight: 300; color: #57504A;">Himmelbett mit leichten Leinenvorhängen</figcaption>
-        </figure>
-        <figure style="margin: 0; display: grid; gap: 12px;">
-          <img src="assets/inspo/schlafzimmer-3.png" alt="Gestepptes Polsterbett mit Meerblick" style="width: 100%; aspect-ratio: 4/5; object-fit: cover;" />
-          <figcaption style="font-size: 13.5px; font-weight: 300; color: #57504A;">Gestepptes Bett mit passender Bettbank</figcaption>
-        </figure>
-        <figure style="margin: 0; display: grid; gap: 12px;">
-          <img src="assets/inspo/schlafzimmer-5.png" alt="Polsterbett unter der Dachschräge" style="width: 100%; aspect-ratio: 4/5; object-fit: cover;" />
-          <figcaption style="font-size: 13.5px; font-weight: 300; color: #57504A;">Kopfteil und Bettbank im gleichen Bouclé</figcaption>
-        </figure>
-      </div>
-      <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: clamp(26px, 3.4vw, 40px);">
-        <a href="#kontakt" style="font-size: 11.5px; letter-spacing: 0.2em; text-transform: uppercase; background: #2B2622; color: #FAF6EF; padding: 17px 28px; border-radius: 2px;" style-hover="background: #B5813A; color: #FAF6EF;">Beratung anfragen</a>
-        <a href="#store" style="font-size: 11.5px; letter-spacing: 0.2em; text-transform: uppercase; border: 1px solid rgba(43,38,34,0.25); color: #2B2622; padding: 17px 28px; border-radius: 2px;" style-hover="border-color: #B5813A; color: #8E6428;">Im Laden ansehen</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="marken" style="scroll-margin-top: 80px; padding: clamp(56px, 8vw, 104px) clamp(20px, 4vw, 48px) 0;">
-    <div style="max-width: 1240px; margin: 0 auto;">
-      <div style="display: flex; flex-wrap: wrap; gap: 14px clamp(18px, 3vw, 56px); align-items: end; justify-content: space-between; margin-bottom: clamp(28px, 4vw, 48px);">
-        <div style="min-width: 0;">
-          <p style="font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: #B5813A; margin: 0 0 16px;">Unsere Marken</p>
-          <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(27px, 3.4vw, 42px); line-height: 1.16; margin: 0; max-width: 20ch; text-wrap: pretty;">Kollektionen, die wir führen</h2>
-        </div>
-        <p style="font-size: 15px; font-weight: 300; line-height: 1.7; color: #57504A; margin: 0; max-width: 40ch;">Im Ladengeschäft in Campos und in unseren Projekten arbeiten wir mit diesen Marken.</p>
-      </div>
-      <div style="display: grid; grid-template-columns: repeat({{ logoCols }}, minmax(0, 1fr)); gap: clamp(8px, 1.2vw, 14px);">
-        <div style="display: flex; align-items: center; justify-content: center; min-height: clamp(110px, 12vw, 150px); padding: 24px 20px; background: #FCFAF6; border: 1px solid rgba(43,38,34,0.08);">
-          <img src="assets/brand-riviera-maison.png" alt="Rivièra Maison" style="width: 100%; max-width: 170px; height: auto;" />
-        </div>
-        <div style="display: flex; align-items: center; justify-content: center; min-height: clamp(110px, 12vw, 150px); padding: 24px 20px; background: #FCFAF6; border: 1px solid rgba(43,38,34,0.08);">
-          <img src="assets/brand-maries-corner.png" alt="marie's corner" style="height: clamp(56px, 6vw, 72px); width: auto;" />
-        </div>
-        <div style="display: flex; align-items: center; justify-content: center; min-height: clamp(110px, 12vw, 150px); padding: 24px 20px; background: #FCFAF6; border: 1px solid rgba(43,38,34,0.08);">
-          <img src="assets/brand-eleonora.png" alt="Eleonora" style="height: clamp(34px, 3.6vw, 44px); width: auto; max-width: 100%;" />
-        </div>
-        <div style="display: flex; align-items: center; justify-content: center; min-height: clamp(110px, 12vw, 150px); padding: 24px 20px; background: #FCFAF6; border: 1px solid rgba(43,38,34,0.08);">
-          <img src="assets/brand-bybooo.png" alt="BY-BOO" style="height: clamp(36px, 3.8vw, 46px); width: auto;" />
-        </div>
-        <div style="display: flex; align-items: center; justify-content: center; min-height: clamp(110px, 12vw, 150px); padding: 24px 20px; background: #FCFAF6; border: 1px solid rgba(43,38,34,0.08);">
-          <img src="assets/brand-urbancotton.png" alt="urban cotton" style="height: clamp(17px, 1.9vw, 22px); width: auto; max-width: 100%;" />
-        </div>
-        <div style="display: flex; align-items: center; justify-content: center; min-height: clamp(110px, 12vw, 150px); padding: 24px 20px; background: #FCFAF6; border: 1px solid rgba(43,38,34,0.08);">
-          <img src="assets/brand-sevn.png" alt="SEVN" style="height: clamp(14px, 1.5vw, 18px); width: auto; max-width: 100%;" />
-        </div>
-        <div style="display: flex; align-items: center; justify-content: center; min-height: clamp(110px, 12vw, 150px); padding: 24px 20px; background: #FCFAF6; border: 1px solid rgba(43,38,34,0.08);">
-          <img src="assets/brand-isaa.png" alt="Isaa" style="height: clamp(22px, 2.4vw, 28px); width: auto;" />
-        </div>
-        <div style="display: flex; align-items: center; justify-content: center; min-height: clamp(110px, 12vw, 150px); padding: 24px 20px; background: #FCFAF6; border: 1px solid rgba(43,38,34,0.08);">
-          <img src="assets/brand-chic-antique.png" alt="Chic Antique Denmark" style="width: 100%; max-width: 150px; height: auto;" />
-        </div>
-        <div style="display: flex; align-items: center; justify-content: center; min-height: clamp(110px, 12vw, 150px); padding: 24px 20px; background: #FCFAF6; border: 1px solid rgba(43,38,34,0.08);">
-          <img src="assets/brand-cote-table.png" alt="Côté Table" style="width: 100%; max-width: 160px; height: auto;" />
-        </div>
-        <div style="display: flex; align-items: center; justify-content: center; min-height: clamp(110px, 12vw, 150px); padding: 24px 20px; background: #FCFAF6; border: 1px solid rgba(43,38,34,0.08);">
-          <img src="assets/brand-ormos.png" alt="Ormo's" style="width: 100%; max-width: 120px; height: auto;" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="referenzen" style="scroll-margin-top: 80px; padding: clamp(64px, 11vw, 150px) clamp(20px, 4vw, 48px);">
-    <div style="max-width: 1240px; margin: 0 auto;">
-      <p style="font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: #B5813A; margin: 0 0 16px;">Referenzen</p>
-      <div style="display: flex; flex-wrap: wrap; gap: clamp(18px, 3vw, 56px); align-items: end; justify-content: space-between;">
-        <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(29px, 4vw, 50px); line-height: 1.14; margin: 0; max-width: 17ch; text-wrap: pretty;">Zwischen Ostsee und Mittelmeer</h2>
-        <p style="font-size: 15px; font-weight: 300; line-height: 1.7; color: #57504A; margin: 0; max-width: 42ch;">Restaurants, Hotels, Villen, Ferienhäuser und private Wohnungen in Deutschland und auf Mallorca. Egal wo: Wir planen jedes Projekt so, dass es zu seinem Ort passt und sich trotzdem nach uns anfühlt.</p>
-      </div>
-      <div style="display: flex; flex-wrap: wrap; gap: 8px; margin: clamp(26px, 4vw, 48px) 0 clamp(22px, 3vw, 40px);">
-        <sc-for list="{{ filters }}" as="f" hint-placeholder-count="5">
-          <button type="button" onClick="{{ f.onClick }}" style="font-family: 'Jost', sans-serif; font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; padding: 13px 18px; border-radius: 2px; cursor: pointer; background: {{ f.bg }}; color: {{ f.fg }}; border: 1px solid {{ f.border }};">{{ f.label }}</button>
-        </sc-for>
-      </div>
-      <figure style="margin: 0; position: relative; overflow: hidden; background: #EFE6D8;">
-        <img src="{{ current.src }}" alt="{{ current.alt }}" style="width: 100%; aspect-ratio: {{ stageRatio }}; object-fit: cover; display: block;" />
-        <button type="button" onClick="{{ prev }}" aria-label="Vorheriges Bild" style="position: absolute; left: clamp(10px, 2vw, 24px); top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; border: none; background: rgba(250,246,239,0.9); color: #2B2622; font-size: 20px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center;" style-hover="background: #FFFDF9;">‹</button>
-        <button type="button" onClick="{{ next }}" aria-label="Nächstes Bild" style="position: absolute; right: clamp(10px, 2vw, 24px); top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; border: none; background: rgba(250,246,239,0.9); color: #2B2622; font-size: 20px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center;" style-hover="background: #FFFDF9;">›</button>
-        <figcaption style="position: absolute; left: 0; right: 0; bottom: 0; padding: 60px clamp(18px, 3vw, 32px) clamp(16px, 2.4vw, 26px); background: linear-gradient(180deg, rgba(43,38,34,0) 0%, rgba(43,38,34,0.7) 100%); color: #FFFDF9; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; align-items: end;">
-          <span style="font-family: 'Cormorant Garamond', serif; font-size: clamp(19px, 2.2vw, 28px); line-height: 1.2;">{{ current.alt }}</span>
-          <span style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;">{{ counter }}</span>
-        </figcaption>
-      </figure>
-      <div style="display: flex; gap: clamp(6px, 1vw, 10px); margin-top: clamp(10px, 1.4vw, 14px); overflow-x: auto; padding-bottom: 6px; scrollbar-width: thin;">
-        <sc-for list="{{ thumbs }}" as="t" hint-placeholder-count="8">
-          <button type="button" onClick="{{ t.onClick }}" aria-label="{{ t.alt }}" style="flex: 0 0 auto; width: clamp(64px, 9vw, 108px); aspect-ratio: 4/3; padding: 0; border: none; background: #EFE6D8; cursor: pointer; opacity: {{ t.opacity }}; outline: 1px solid {{ t.ring }}; outline-offset: 2px;">
-            <img src="{{ t.src }}" alt="" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" />
-          </button>
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(6px, 1vw, 14px);">
+        <sc-for list="{{ materials }}" as="m" hint-placeholder-count="9">
+          <figure style="margin: 0; position: relative; aspect-ratio: 1/1; background: {{ m.bg }};">
+            <image-slot id="{{ m.id }}" shape="rect" placeholder="{{ m.label }}"></image-slot>
+            <figcaption style="position: absolute; left: clamp(8px, 1.2vw, 16px); bottom: clamp(8px, 1.2vw, 16px); background: rgba(253,252,250,0.92); padding: 7px 11px; font-size: clamp(9px, 1vw, 10.5px); letter-spacing: 0.22em; text-transform: uppercase; color: #2E2A25; pointer-events: none;">{{ m.label }}</figcaption>
+          </figure>
         </sc-for>
       </div>
     </div>
   </section>
 
-  <section id="projekte" style="scroll-margin-top: 80px; padding: 0 clamp(20px, 4vw, 48px) clamp(64px, 11vw, 150px);">
-    <div style="max-width: 1240px; margin: 0 auto;">
-      <div style="display: flex; flex-wrap: wrap; gap: 14px clamp(18px, 3vw, 56px); align-items: end; justify-content: space-between; padding-top: clamp(48px, 6vw, 80px); border-top: 1px solid rgba(43,38,34,0.12); margin-bottom: clamp(40px, 6vw, 80px);">
-        <div style="min-width: 0;">
-          <p style="font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: #B5813A; margin: 0 0 16px;">Projekte</p>
-          <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(29px, 4vw, 50px); line-height: 1.14; margin: 0; max-width: 18ch; text-wrap: pretty;">Von der ersten Skizze bis zum fertigen Raum</h2>
-        </div>
-        <p style="font-size: 15px; font-weight: 300; line-height: 1.7; color: #57504A; margin: 0; max-width: 42ch;">Je nach Projekt arbeiten wir mit Moodboards, Handskizzen oder Grundrissen am Computer. Ein paar Beispiele aus den letzten Jahren an der Ostsee.</p>
-      </div>
-
-      <article style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: clamp(28px, 4.5vw, 64px); align-items: center;">
-        <div style="min-width: 0; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(8px, 1.2vw, 14px);">
-          <img src="assets/refs/surf-terrasse.jpg" alt="Planung der Terrasse im Surf &amp; Rescue Club" style="width: 100%; aspect-ratio: 16/10; object-fit: cover; grid-column: span 2; background: #fff; border: 1px solid rgba(43,38,34,0.08);" />
-          <img src="assets/refs/surf-rooftop.jpg" alt="Planung der Rooftopbar" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; background: #fff; border: 1px solid rgba(43,38,34,0.08);" />
-          <img src="assets/refs/hp-terrasse.jpg" alt="Außenbereich mit Palmen und Loungemöbeln" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: left bottom;" />
-        </div>
-        <div style="min-width: 0;">
-          <p style="font-size: 10.5px; letter-spacing: 0.28em; text-transform: uppercase; color: #9C9084; margin: 0 0 14px;">Gastronomie · Outdoor · Grömitz</p>
-          <h3 style="font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(27px, 3vw, 38px); line-height: 1.15; margin: 0;">Surf &amp; Rescue Club</h3>
-          <p style="font-size: clamp(15px, 1.4vw, 16.5px); font-weight: 300; line-height: 1.75; color: #57504A; margin: 18px 0 0; max-width: 48ch;">Für den Club haben wir die Terrasse im Erdgeschoss und die Rooftopbar geplant. Vom Grundriss über die Möblierung bis zu Pergola, Bar und Loungebereich am Pool.</p>
-          <ul style="list-style: none; padding: 0; margin: 26px 0 0; display: grid; gap: 10px;">
-            <li style="font-size: 14.5px; font-weight: 300; color: #2B2622; padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: #D9A85C;"></span>Grundrisse für Terrasse und Dach</li>
-            <li style="font-size: 14.5px; font-weight: 300; color: #2B2622; padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: #D9A85C;"></span>Loungesessel, Strandkörbe und Gastro-Schirme</li>
-            <li style="font-size: 14.5px; font-weight: 300; color: #2B2622; padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: #D9A85C;"></span>Pflanzkübel aus Cortenstahl als Raumteiler</li>
-            <li style="font-size: 14.5px; font-weight: 300; color: #2B2622; padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: #D9A85C;"></span>Stehtische aus Surfbrettern</li>
-          </ul>
-        </div>
-      </article>
-
-      <article style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: clamp(28px, 4.5vw, 64px); align-items: center; margin-top: clamp(64px, 9vw, 120px);">
-        <div style="min-width: 0;">
-          <p style="font-size: 10.5px; letter-spacing: 0.28em; text-transform: uppercase; color: #9C9084; margin: 0 0 14px;">Privat · Neubau · Timmendorfer Strand</p>
-          <h3 style="font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(27px, 3vw, 38px); line-height: 1.15; margin: 0;">Doppelhaus Timmendorf</h3>
-          <p style="font-size: clamp(15px, 1.4vw, 16.5px); font-weight: 300; line-height: 1.75; color: #57504A; margin: 18px 0 0; max-width: 48ch;">Zwei Haushälften, eine gemeinsame Linie. Für den Bauherrn haben wir jede Etage möbliert geplant und für jeden Raum ein eigenes Moodboard erstellt. So konnte er vor dem Einzug sehen, wie alles zusammenpasst.</p>
-          <ul style="list-style: none; padding: 0; margin: 26px 0 0; display: grid; gap: 10px;">
-            <li style="font-size: 14.5px; font-weight: 300; color: #2B2622; padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: #D9A85C;"></span>Möblierte Grundrisse für alle Etagen</li>
-            <li style="font-size: 14.5px; font-weight: 300; color: #2B2622; padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: #D9A85C;"></span>Moodboards für Wohnen, Schlafen und Flur</li>
-            <li style="font-size: 14.5px; font-weight: 300; color: #2B2622; padding-left: 20px; position: relative;"><span style="position: absolute; left: 0; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: #D9A85C;"></span>Auswahl von Möbeln, Leuchten und Textilien</li>
-          </ul>
-        </div>
-        <div style="min-width: 0; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(8px, 1.2vw, 14px);">
-          <img src="assets/refs/tim-grundriss.jpg" alt="Möblierter Grundriss Erdgeschoss" style="width: 100%; aspect-ratio: 16/10; object-fit: cover; grid-column: span 2; background: #fff; border: 1px solid rgba(43,38,34,0.08);" />
-          <img src="assets/refs/tim-wohnen.jpg" alt="Moodboard Wohnzimmer" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; background: #fff; border: 1px solid rgba(43,38,34,0.08);" />
-          <img src="assets/refs/tim-schlafen.jpg" alt="Moodboard Schlafzimmer" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; background: #fff; border: 1px solid rgba(43,38,34,0.08);" />
-        </div>
-      </article>
-
-      <article style="margin-top: clamp(64px, 9vw, 120px);">
-        <div style="display: flex; flex-wrap: wrap; gap: 14px clamp(18px, 3vw, 56px); align-items: end; justify-content: space-between; margin-bottom: clamp(22px, 3vw, 36px);">
-          <div style="min-width: 0;">
-            <p style="font-size: 10.5px; letter-spacing: 0.28em; text-transform: uppercase; color: #9C9084; margin: 0 0 14px;">Hotel · Gastro · Ferienwohnung · Privat</p>
-            <h3 style="font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(27px, 3vw, 38px); line-height: 1.15; margin: 0;">Weitere Projekte an der Ostsee</h3>
-          </div>
-          <p style="font-size: 15px; font-weight: 300; line-height: 1.7; color: #57504A; margin: 0; max-width: 42ch;">Wohnungen, Hotelzimmer und Restaurants rund um Heiligenhafen. Viele davon mit Möbeln von Rivièra Maison.</p>
-        </div>
-        <div style="display: grid; grid-template-columns: repeat({{ projCols }}, minmax(0, 1fr)); gap: clamp(8px, 1.2vw, 14px);">
-          <img src="assets/refs/hp-wohnen.jpg" alt="Wohnzimmer mit hellem Ecksofa" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: center;" />
-          <img src="assets/refs/hp-schlafen.jpg" alt="Hotelzimmer mit Polsterbett" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: left center;" />
-          <img src="assets/refs/hp-restaurant.jpg" alt="Restaurant mit Pflanzen und Rattanleuchten" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
-          <img src="assets/refs/hp-lounge.jpg" alt="Wohnbereich mit Chesterfield-Sesseln" style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" />
-          <img src="assets/refs/hp-wohnen-blau.jpg" alt="Lounge mit blauem Sofa" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: left center;" />
-          <img src="assets/refs/tim-flur.jpg" alt="Moodboard Flur" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; background: #fff; border: 1px solid rgba(43,38,34,0.08);" />
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section id="store" style="scroll-margin-top: 80px; background: #2B2622; color: #F3EDE3; padding: clamp(64px, 11vw, 150px) clamp(20px, 4vw, 48px); position: relative; overflow: hidden;">
-    <img src="assets/logo1.png" alt="" style="position: absolute; right: clamp(-120px, -6vw, -40px); top: 50%; transform: translateY(-50%); width: clamp(260px, 38vw, 520px); height: auto; opacity: 0.07; pointer-events: none;" />
-    <div style="position: relative; max-width: 1240px; margin: 0 auto;">
-      <p style="font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: #D9A85C; margin: 0 0 22px;">Ladengeschäft · Eröffnung in Kürze</p>
-      <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(40px, 7vw, 96px); line-height: 1.02; letter-spacing: -0.01em; margin: 0; max-width: 12ch; color: #FFFDF9; text-wrap: pretty;">Bald in Campos</h2>
-      <p style="font-size: clamp(15px, 1.5vw, 18px); font-weight: 300; line-height: 1.75; color: #E6DED3; margin: 28px 0 0; max-width: 52ch;">In der Carrer Santanyí entsteht gerade unser Laden. Möbel, Leuchten, Textilien und Keramik der Marken, mit denen wir arbeiten, zum Anfassen, Ausprobieren und Mitnehmen. Eingerichtet wie ein Zuhause, nicht wie ein Showroom.</p>
-
-      <div style="display: grid; grid-template-columns: repeat({{ storeCols }}, minmax(0, 1fr)); gap: clamp(28px, 4vw, 56px); margin-top: clamp(44px, 6vw, 72px); padding-top: clamp(28px, 3.4vw, 40px); border-top: 1px solid rgba(230,222,211,0.18);">
-        <div>
-          <p style="font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: #A89B8C; margin: 0 0 12px;">Adresse</p>
-          <p style="font-family: 'Cormorant Garamond', serif; font-size: clamp(22px, 2.2vw, 27px); line-height: 1.3; margin: 0; color: #FFFDF9;">Carrer Santanyí 64<br />07630 Campos, Mallorca</p>
-          <a href="https://maps.google.com/?q=Carrer+Santanyi+64,+07630+Campos" target="_blank" rel="noopener" style="display: inline-block; margin-top: 16px; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #D9A85C; border-bottom: 1px solid rgba(217,168,92,0.5); padding-bottom: 3px;" style-hover="color: #F0DFC0;">Auf der Karte ansehen</a>
-        </div>
-        <div>
-          <p style="font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: #A89B8C; margin: 0 0 12px;">Bis zur Eröffnung</p>
-          <p style="font-size: 15px; font-weight: 300; line-height: 1.7; margin: 0; color: #E6DED3; max-width: 34ch;">Beratung und Projekte laufen schon jetzt. Wir treffen uns bei dir vor Ort oder zeigen dir Muster und Kataloge nach Absprache.</p>
-          <a href="#kontakt" style="display: inline-block; margin-top: 16px; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #D9A85C; border-bottom: 1px solid rgba(217,168,92,0.5); padding-bottom: 3px;" style-hover="color: #F0DFC0;">Termin vereinbaren</a>
-        </div>
-        <div>
-          <p style="font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: #A89B8C; margin: 0 0 12px;">Zur Eröffnung einladen lassen</p>
-          <sc-if value="{{ notifyDone }}" hint-placeholder-val="{{ false }}">
-            <p style="font-family: 'Cormorant Garamond', serif; font-size: 23px; line-height: 1.35; margin: 0; color: #FFFDF9;">Danke. Du bekommst eine Einladung, sobald wir den Termin haben.</p>
-          </sc-if>
-          <sc-if value="{{ notifyOpen }}" hint-placeholder-val="{{ true }}">
-            <form onSubmit="{{ onNotify }}" style="display: grid; gap: 10px;">
-              <input type="email" name="email" required="required" placeholder="Deine E-Mail" style="font-family: 'Jost', sans-serif; font-size: 16px; font-weight: 300; padding: 15px 16px; background: rgba(255,253,249,0.06); border: 1px solid rgba(230,222,211,0.28); border-radius: 2px; color: #FFFDF9; width: 100%;" />
-              <button type="submit" style="font-family: 'Jost', sans-serif; font-size: 11.5px; letter-spacing: 0.2em; text-transform: uppercase; background: #D9A85C; color: #2B2622; border: none; padding: 16px 24px; border-radius: 2px; cursor: pointer;" style-hover="background: #F0DFC0;">Benachrichtigen</button>
-            </form>
-          </sc-if>
-        </div>
+  <section id="leistungen" style="scroll-margin-top: 80px; padding: 0 clamp(20px, 4vw, 56px) clamp(64px, 10vw, 140px);">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <p style="font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: #6E675F; margin: 0 0 18px;">Leistungen</p>
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(30px, 4vw, 50px); line-height: 1.12; margin: 0 0 clamp(32px, 4.5vw, 56px); max-width: 18ch; text-wrap: balance;">Vier Wege zu deinem Zuhause</h2>
+      <div style="border-top: 1px solid rgba(46,42,37,0.14);">
+        <sc-for list="{{ services }}" as="s" hint-placeholder-count="4">
+          <a href="#kontakt" style="display: grid; grid-template-columns: {{ svcGrid }}; gap: 10px clamp(20px, 4vw, 64px); align-items: baseline; padding: clamp(24px, 3.2vw, 40px) 0; border-bottom: 1px solid rgba(46,42,37,0.14); color: #2E2A25;" style-hover="background: #F5F1EA;">
+            <span style="font-family: 'Cormorant Garamond', serif; font-size: 20px; color: #9C9184;">{{ s.no }}</span>
+            <span style="font-size: clamp(13px, 1.3vw, 15px); letter-spacing: 0.22em; text-transform: uppercase; font-weight: 500;">{{ s.title }}</span>
+            <span style="grid-column: {{ svcTextCol }}; font-size: clamp(15px, 1.4vw, 17px); font-weight: 300; line-height: 1.7; color: #57514A; max-width: 52ch;">{{ s.text }}</span>
+          </a>
+        </sc-for>
       </div>
     </div>
   </section>
 
-  <section id="kontakt" style="scroll-margin-top: 80px; padding: clamp(64px, 11vw, 150px) clamp(20px, 4vw, 48px);">
-    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr)); gap: clamp(36px, 6vw, 80px);">
-      <div style="min-width: 0;">
-        <p style="font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: #B5813A; margin: 0 0 16px;">Kontakt</p>
-        <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(29px, 4vw, 50px); line-height: 1.14; margin: 0; max-width: 16ch; text-wrap: pretty;">Erzähl uns von deinem Raum</h2>
-        <p style="font-size: clamp(15px, 1.4vw, 17px); font-weight: 300; line-height: 1.75; color: #57504A; margin: 24px 0 0; max-width: 44ch;">Ein Zimmer, eine Terrasse oder ein ganzes Haus. Schreib kurz, worum es geht, und wir melden uns mit einem Terminvorschlag.</p>
-        <img src="assets/logo1.png" alt="" style="width: 50px; height: auto; opacity: 0.8; margin-top: 40px;" />
+  <section id="edda" style="scroll-margin-top: 80px; padding: clamp(64px, 10vw, 140px) clamp(20px, 4vw, 56px); background: #F5F1EA;">
+    <div style="max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: repeat({{ eddaCols }}, minmax(0, 1fr)); gap: clamp(36px, 6vw, 96px); align-items: center;">
+      <div style="position: relative; width: 100%; aspect-ratio: 4/5; background: #EAE3D7; min-width: 0;">
+        <image-slot id="edda-portrait" shape="rect" placeholder="Porträt von Edda hier ablegen"></image-slot>
       </div>
       <div style="min-width: 0;">
-        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
-          <div style="background: #F3EDE3; padding: clamp(28px, 4vw, 48px); border: 1px solid rgba(181,129,58,0.3);">
-            <p style="font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 400; margin: 0 0 12px;">Danke, {{ sentName }}</p>
-            <p style="font-size: 15px; font-weight: 300; line-height: 1.7; color: #57504A; margin: 0;">Deine Nachricht ist angekommen. Wir melden uns in den nächsten Tagen bei dir.</p>
-          </div>
-        </sc-if>
-        <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
-          <form onSubmit="{{ onSubmit }}" style="display: grid; gap: 18px;">
-            <label style="display: grid; gap: 9px;">
-              <span style="font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: #9C9084;">Name</span>
-              <input type="text" name="name" required="required" placeholder="Dein Name" style="font-family: 'Jost', sans-serif; font-size: 16px; font-weight: 300; padding: 15px 16px; background: #FCFAF6; border: 1px solid rgba(43,38,34,0.16); border-radius: 2px; color: #2B2622; width: 100%;" />
-            </label>
-            <label style="display: grid; gap: 9px;">
-              <span style="font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: #9C9084;">E-Mail</span>
-              <input type="email" name="email" required="required" placeholder="du@beispiel.com" style="font-family: 'Jost', sans-serif; font-size: 16px; font-weight: 300; padding: 15px 16px; background: #FCFAF6; border: 1px solid rgba(43,38,34,0.16); border-radius: 2px; color: #2B2622; width: 100%;" />
-            </label>
-            <label style="display: grid; gap: 9px;">
-              <span style="font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: #9C9084;">Anliegen</span>
-              <select name="topic" style="font-family: 'Jost', sans-serif; font-size: 16px; font-weight: 300; padding: 15px 16px; background: #FCFAF6; border: 1px solid rgba(43,38,34,0.16); border-radius: 2px; color: #2B2622; width: 100%;">
-                <option>Restaurant, Bar oder Café ausstatten</option>
-                <option>Ladenlokal oder Showroom</option>
-                <option>Villa einrichten</option>
-                <option>Finca oder Apartment einrichten</option>
-                <option>Einzelne Stücke aus dem Store</option>
-                <option>Zusammenarbeit (Architekt, Makler, Vermietung)</option>
-              </select>
-            </label>
-            <label style="display: grid; gap: 9px;">
-              <span style="font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: #9C9084;">Nachricht</span>
-              <textarea name="message" rows="5" placeholder="Was möchtest du einrichten?" style="font-family: 'Jost', sans-serif; font-size: 16px; font-weight: 300; padding: 15px 16px; background: #FCFAF6; border: 1px solid rgba(43,38,34,0.16); border-radius: 2px; color: #2B2622; width: 100%; resize: vertical;"></textarea>
-            </label>
-            <button type="submit" style="font-family: 'Jost', sans-serif; font-size: 11.5px; letter-spacing: 0.2em; text-transform: uppercase; background: #2B2622; color: #FAF6EF; border: none; padding: 18px 30px; border-radius: 2px; cursor: pointer; justify-self: start;" style-hover="background: #B5813A;">Anfrage senden</button>
-          </form>
-        </sc-if>
+        <p style="font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: #6E675F; margin: 0 0 18px;">Über Edda</p>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(30px, 4vw, 50px); line-height: 1.14; margin: 0; max-width: 17ch; text-wrap: balance;">Hinter Curcuma Dreams Interior steht die Liebe zu Räumen.</h2>
+        <p style="font-size: clamp(15px, 1.4vw, 17px); font-weight: 300; line-height: 1.8; color: #57514A; margin: 26px 0 0; max-width: 50ch;">Zu Räumen, zu Materialien und zu den Menschen, die darin leben.</p>
+        <p style="font-size: clamp(15px, 1.4vw, 17px); font-weight: 300; line-height: 1.8; color: #57514A; margin: 16px 0 0; max-width: 50ch;">Mit langjähriger Erfahrung, Liebe zum Detail und einem sicheren Gespür für Materialien, Farben und Atmosphäre entstehen individuelle Räume, die Persönlichkeit und Lebensgefühl verbinden.</p>
+        <a href="#kontakt" style="display: inline-block; margin-top: clamp(30px, 3.6vw, 42px); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #2E2A25; border-bottom: 1px solid rgba(46,42,37,0.4); padding-bottom: 4px;" style-hover="color: #6E675F;">Edda kennenlernen</a>
       </div>
     </div>
   </section>
 
-  <footer style="background: #2B2622; color: #E6DED3; padding: clamp(48px, 7vw, 84px) clamp(20px, 4vw, 48px) 32px;">
-    <div style="max-width: 1240px; margin: 0 auto;">
+  <section id="kontakt" style="scroll-margin-top: 80px; padding: clamp(72px, 11vw, 160px) clamp(20px, 4vw, 56px); text-align: center;">
+    <div style="max-width: 760px; margin: 0 auto;">
+      <p style="font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: #6E675F; margin: 0 0 20px;">Kontakt</p>
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(32px, 5vw, 60px); line-height: 1.1; margin: 0; text-wrap: balance;">Von der ersten Idee bis zum letzten Detail.</h2>
+      <p style="font-size: clamp(15px, 1.4vw, 17px); font-weight: 300; line-height: 1.8; color: #57514A; margin: 26px auto 0; max-width: 48ch; text-wrap: pretty;">Ein persönliches Gespräch ist der erste Schritt zu einem Zuhause oder einer Ferienimmobilie, die wirklich zu Ihnen passt.</p>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: clamp(32px, 4vw, 44px);">
+        <a href="mailto:hola@curcumadreams.es?subject=Beratungstermin" style="font-size: 11.5px; letter-spacing: 0.2em; text-transform: uppercase; background: #2E2A25; color: #FDFCFA; padding: 18px 30px; border-radius: 2px;" style-hover="background: #4A443D; color: #FDFCFA;">Beratungstermin vereinbaren</a>
+        <a href="#footer" style="font-size: 11.5px; letter-spacing: 0.2em; text-transform: uppercase; border: 1px solid rgba(46,42,37,0.3); color: #2E2A25; padding: 18px 30px; border-radius: 2px;" style-hover="border-color: #2E2A25; color: #2E2A25;">Kontakt · E-Mail · Telefon</a>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer" style="background: #2E2A25; color: #E8E2D9; padding: clamp(52px, 7vw, 88px) clamp(20px, 4vw, 56px) 32px;">
+    <div style="max-width: 1320px; margin: 0 auto;">
       <div style="display: grid; grid-template-columns: repeat({{ footCols }}, minmax(0, 1fr)); gap: 36px 24px; align-items: start;">
+        <img src="assets/logo-stacked-light.png" alt="Cúrcuma Dreams Interior" style="width: 124px; height: auto;" />
         <div>
-          <img src="assets/logo-stacked-light.png" alt="Cúrcuma Dreams Interior" style="width: 132px; height: auto;" />
+          <p style="font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: #A39A8E; margin: 0 0 14px;">E-Mail</p>
+          <a href="mailto:hola@curcumadreams.es" style="font-size: 15px; font-weight: 300; color: #E8E2D9;" style-hover="color: #FFFFFF;">hola@curcumadreams.es</a>
         </div>
         <div>
-          <p style="font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: #9C9084; margin: 0 0 14px;">Seite</p>
-          <div style="display: grid; gap: 9px;">
-            <a href="#marke" style="font-size: 14px; font-weight: 300; color: #E6DED3;" style-hover="color: #D9A85C;">Die Marke</a>
-            <a href="#leistungen" style="font-size: 14px; font-weight: 300; color: #E6DED3;" style-hover="color: #D9A85C;">Leistungen</a>
-            <a href="#referenzen" style="font-size: 14px; font-weight: 300; color: #E6DED3;" style-hover="color: #D9A85C;">Referenzen</a>
-            <a href="#store" style="font-size: 14px; font-weight: 300; color: #E6DED3;" style-hover="color: #D9A85C;">Store</a>
-          </div>
+          <p style="font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: #A39A8E; margin: 0 0 14px;">Telefon</p>
+          <p style="font-size: 15px; font-weight: 300; margin: 0; color: #E8E2D9;">Folgt in Kürze</p>
         </div>
         <div>
-          <p style="font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: #9C9084; margin: 0 0 14px;">Besuch</p>
-          <p style="font-size: 14px; font-weight: 300; line-height: 1.7; margin: 0; color: #E6DED3;">Carrer Santanyí 64<br />07630 Campos, Mallorca<br />Termine nach Absprache</p>
-        </div>
-        <div>
-          <p style="font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: #9C9084; margin: 0 0 14px;">Kontakt</p>
-          <div style="display: grid; gap: 9px;">
-            <a href="mailto:hola@curcumadreams.es" style="font-size: 14px; font-weight: 300; color: #E6DED3;" style-hover="color: #D9A85C;">hola@curcumadreams.es</a>
-            <a href="https://instagram.com" style="font-size: 14px; font-weight: 300; color: #E6DED3;" style-hover="color: #D9A85C;">Instagram</a>
-          </div>
+          <p style="font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: #A39A8E; margin: 0 0 14px;">Store</p>
+          <p style="font-size: 15px; font-weight: 300; line-height: 1.7; margin: 0; color: #E8E2D9;">Carrer Santanyí 64<br />07630 Campos, Mallorca</p>
         </div>
       </div>
-      <div style="display: flex; flex-wrap: wrap; gap: 12px 28px; justify-content: space-between; margin-top: clamp(36px, 5vw, 64px); padding-top: 22px; border-top: 1px solid rgba(230,222,211,0.16);">
-        <p style="font-size: 12px; font-weight: 300; color: #9C9084; margin: 0;">© 2026 Cúrcuma Dreams Interior, Campos</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px 28px; justify-content: space-between; margin-top: clamp(40px, 5vw, 64px); padding-top: 22px; border-top: 1px solid rgba(232,226,217,0.16);">
+        <p style="font-size: 12px; font-weight: 300; color: #A39A8E; margin: 0;">© 2026 Cúrcuma Dreams Interior</p>
         <div style="display: flex; gap: 24px;">
-          <a href="#top" style="font-size: 12px; font-weight: 300; color: #9C9084;" style-hover="color: #D9A85C;">Impressum</a>
-          <a href="#top" style="font-size: 12px; font-weight: 300; color: #9C9084;" style-hover="color: #D9A85C;">Datenschutz</a>
+          <a href="#top" style="font-size: 12px; font-weight: 300; color: #A39A8E;" style-hover="color: #FFFFFF;">Impressum</a>
+          <a href="#top" style="font-size: 12px; font-weight: 300; color: #A39A8E;" style-hover="color: #FFFFFF;">Datenschutz</a>
         </div>
       </div>
     </div>
   </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#B5813A&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#B5813A&quot;,&quot;#D9A85C&quot;,&quot;#A89B8C&quot;,&quot;#2B2622&quot;]}}">
-const PHOTOS = [
-  { id: 'p24', cat: 'malo', alt: 'Restaurant Malo, Lounge an der Pflanzenwand' },
-  { id: 'p22', cat: 'malo', alt: 'Restaurant Malo, Gastraum am Fenster' },
-  { id: 'p29', cat: 'malo', alt: 'Restaurant Malo, Bar mit warmem Licht' },
-  { id: 'p27', cat: 'malo', alt: 'Restaurant Malo, Wintergarten' },
-  { id: 'p28', cat: 'malo', alt: 'Restaurant Malo, Loungeecke' },
-  { id: 'p33', cat: 'malo', alt: 'Restaurant Malo, Eingang' },
-  { id: 'p23', cat: 'malo', alt: 'Restaurant Malo, Tische am Tageslicht' },
-  { id: 'p30', cat: 'malo', alt: 'Restaurant Malo, Deckenleuchten' },
-  { id: 'p25', cat: 'malo', alt: 'Restaurant Malo, Blick in den Gastraum' },
-  { id: 'p26', cat: 'malo', alt: 'Restaurant Malo, Bestuhlung' },
-  { id: 'p31', cat: 'malo', alt: 'Restaurant Malo, Terrasse' },
-  { id: 'p32', cat: 'malo', alt: 'Restaurant Malo, Drink am Abend' },
-  { id: 'p19', cat: 'laden', alt: 'Ladenlokal mit Sitzecke' },
-  { id: 'p21', cat: 'laden', alt: 'Lounge mit Regalwand' },
-  { id: 'p20', cat: 'laden', alt: 'Sideboard und Spiegel' },
-  { id: 'p18', cat: 'laden', alt: 'Empfangstisch mit Styling' },
-  { id: 'p12', cat: 'laden', alt: 'Ruhebereich in Rattan' },
-  { id: 'p16', cat: 'laden', alt: 'Liegen am Fenster' },
-  { id: 'p17', cat: 'laden', alt: 'Regal mit Accessoires' },
-  { id: 'p01', cat: 'wohnen', alt: 'Wohnzimmer in Creme' },
-  { id: 'p11', cat: 'wohnen', alt: 'Sofa mit Leinenkissen' },
-  { id: 'p03', cat: 'wohnen', alt: 'Essplatz am Fenster' },
-  { id: 'p13', cat: 'wohnen', alt: 'Keramikvase mit Zweigen' },
-  { id: 'p07', cat: 'wohnen', alt: 'Schlafzimmer mit Leinen' },
-  { id: 'p09', cat: 'wohnen', alt: 'Schlafzimmer mit Morgenlicht' },
-  { id: 'p10', cat: 'wohnen', alt: 'Bad in Weiß und Holz' }
+<script type="text/x-dc" data-dc-script>
+const MATERIALS = [
+  ['Leinen', '#EFEAE1'], ['Wolle · Kaschmir', '#E9E4DC'], ['Holz', '#E4D9CA'],
+  ['Stein', '#E3E1DC'], ['Keramik', '#EDE6DC'], ['Geflochtenes', '#E6DBC9'],
+  ['Baumwolle', '#F1EEE8'], ['Texturen', '#E8E2D8'], ['Licht · Schatten', '#ECE7DF']
 ];
-
-const CATS = [
-  { key: 'malo', label: 'Restaurant Malo' },
-  { key: 'laden', label: 'Läden und Objekte' },
-  { key: 'wohnen', label: 'Privat' }
+const SERVICES = [
+  ['Private Homes', 'Persönliche Wohnkonzepte für Häuser und Wohnungen auf Mallorca.'],
+  ['Holiday Homes', 'Entspannte, stilvolle Einrichtung für Fincas, Ferienhäuser und exklusive Ferienimmobilien.'],
+  ['Interior Consulting', 'Von der ersten Idee über Materialien und Farben bis zur Auswahl von Möbeln, Textilien und Accessoires.'],
+  ['Furnishing', 'Einrichten mit ausgewählten Möbeln und besonderen Details, individuell abgestimmt auf Raum, Architektur und Persönlichkeit.']
 ];
 
 class Component extends DCLogic {
-  state = { cat: 'malo', sent: false, sentName: '', wide: true, menuOpen: false, lang: 'DE', vw: 1280 };
+  state = { vw: 1280, menuOpen: false };
 
   componentDidMount() {
     this._sync = () => {
       const vw = window.innerWidth;
-      const wide = vw > 1080;
-      if (wide !== this.state.wide) this.setState({ wide, menuOpen: false });
-      if (vw !== this.state.vw) this.setState({ vw });
+      if (vw !== this.state.vw) this.setState({ vw, menuOpen: vw > 1000 ? false : this.state.menuOpen });
     };
     this._sync();
     window.addEventListener('resize', this._sync);
@@ -646,71 +224,22 @@ class Component extends DCLogic {
   }
 
   renderVals() {
-    const accent = this.props.accent ?? '#B5813A';
-    const cat = this.state.cat;
-    const pool = PHOTOS;
-    const cats = CATS;
-    const list = cat === 'alle' ? pool : pool.filter(p => p.cat === cat);
+    const vw = this.state.vw;
+    const wide = vw > 1000;
     return {
-      langs: ['DE', 'ES', 'EN'].map(code => ({
-        code,
-        color: code === this.state.lang ? '#2B2622' : '#9C9084',
-        underline: code === this.state.lang ? accent : 'transparent',
-        onClick: () => this.setState({ lang: code })
-      })),
-      logoCols: this.state.vw > 900 ? 5 : 2,
-      tileCols: this.state.vw > 900 ? 4 : 2,
-      eddaCols: this.state.vw > 900 ? 2 : 1,
-      svcCols: this.state.vw > 720 ? 3 : 1,
-      valCols: this.state.vw > 1100 ? 3 : 1,
-      swatchCols: this.state.vw > 720 ? 5 : 2,
-      lastSwatch: this.state.vw > 720 ? 'auto' : '1 / -1',
-      storeCols: this.state.vw > 900 ? 3 : 1,
-      footCols: this.state.vw > 900 ? 4 : 2,
-      wideRatio: this.state.vw > 760 ? '16/8' : '4/5',
-      inspoCols: this.state.vw > 760 ? 4 : 2,
-      projCols: this.state.vw > 900 ? 3 : 2,
-      wide: this.state.wide,
-      narrow: !this.state.wide,
-      menuOpen: !this.state.wide && this.state.menuOpen,
+      wide,
+      narrow: !wide,
+      menuOpen: !wide && this.state.menuOpen,
       toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
       closeMenu: () => this.setState({ menuOpen: false }),
-      filters: cats.map(c => ({
-        label: c.label,
-        bg: c.key === cat ? '#2B2622' : 'transparent',
-        fg: c.key === cat ? '#FFFDF9' : '#6B6259',
-        border: c.key === cat ? '#2B2622' : 'rgba(43,38,34,0.2)',
-        onClick: () => this.setState({ cat: c.key, slide: 0 })
-      })),
-      ...(() => {
-        const items = list.map(p => ({ src: p.src || ('assets/photos/' + p.id + '.jpg'), alt: p.alt }));
-        const n = items.length || 1;
-        const i = ((this.state.slide || 0) % n + n) % n;
-        return {
-          current: items[i] || { src: '', alt: '' },
-          counter: String(i + 1).padStart(2, '0') + ' / ' + String(items.length).padStart(2, '0'),
-          stageRatio: this.state.vw > 760 ? '16/9' : '4/5',
-          prev: () => this.setState({ slide: i - 1 }),
-          next: () => this.setState({ slide: i + 1 }),
-          thumbs: items.map((t, k) => ({
-            src: t.src, alt: t.alt,
-            opacity: k === i ? 1 : 0.55,
-            ring: k === i ? '#2B2622' : 'transparent',
-            onClick: () => this.setState({ slide: k })
-          }))
-        };
-      })(),
-      notifyDone: !!this.state.notified,
-      notifyOpen: !this.state.notified,
-      onNotify: (e) => { e.preventDefault(); this.setState({ notified: true }); },
-      sent: this.state.sent,
-      notSent: !this.state.sent,
-      sentName: this.state.sentName,
-      onSubmit: (e) => {
-        e.preventDefault();
-        const fd = new FormData(e.target);
-        this.setState({ sent: true, sentName: (fd.get('name') || '').toString().split(' ')[0] });
-      }
+      heroH: vw > 760 ? 'min(78svh, 820px)' : '62svh',
+      triCols: vw > 720 ? 3 : 1,
+      eddaCols: vw > 900 ? 2 : 1,
+      footCols: vw > 900 ? 4 : 2,
+      svcGrid: vw > 760 ? '48px minmax(0, 0.8fr) minmax(0, 1.4fr)' : '36px minmax(0, 1fr)',
+      svcTextCol: vw > 760 ? 'auto' : '2',
+      materials: MATERIALS.map(([label, bg], i) => ({ label, bg, id: 'v2-mat-' + (i + 1) })),
+      services: SERVICES.map(([title, text], i) => ({ no: String(i + 1).padStart(2, '0'), title, text }))
     };
   }
 }
